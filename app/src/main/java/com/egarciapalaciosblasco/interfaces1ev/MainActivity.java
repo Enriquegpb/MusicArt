@@ -2,21 +2,31 @@ package com.egarciapalaciosblasco.interfaces1ev;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button btnmenu=(Button) findViewById(R.id.button2);
 
         ImageView hey=(ImageView) findViewById(R.id.heyl);
+
+        ImageView cascos=(ImageView) findViewById(R.id.imageView);
+        Animation anim= AnimationUtils.loadAnimation(this,R.anim.cascos);
+        cascos.startAnimation(anim);
 
         Glide.with(this)
                 .load(R.drawable.hey)
@@ -26,5 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 //.circleCrop()
                 //.diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(hey);
+        btnmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,activity_menus.class);
+                startActivity(intent);
+
+            }
+        });
+
+        TextView mycontext=(TextView) findViewById(R.id.textView);
+        registerForContextMenu(mycontext);
     }
 }

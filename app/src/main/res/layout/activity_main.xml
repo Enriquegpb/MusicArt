@@ -12,31 +12,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_begin="219dp" />
 
     <ImageView
         android:id="@+id/heyl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/sym_def_app_icon"
-        android:alpha="0.5"
         />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
-        android:text="Mi boton de prueba"
+        android:text="@string/mi_boton_de_prueba"
+        app:layout_constraintBottom_toBottomOf="@+id/heyl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heyl" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        style="@style/binvisible"
+        app:strokeColor="@color/white"
+
+        />
 
     <TextView
         android:id="@+id/textView"
@@ -46,6 +50,18 @@
         android:text="TextoConstraintLayout"
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/music" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">interfaces1ªev</string>
+    <string name="mi_boton_de_prueba">Mi boton de prueba</string>
+    <string name="item">Item</string>
+    <string name="action_settings">action_settings</string>
 </resources>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Interfaces1ªev">
         <activity
+            android:name=".activity_menus"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
