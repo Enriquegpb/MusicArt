@@ -40,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, activitymenus.class);
-                //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
 
             }
