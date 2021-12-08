@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         cascos.startAnimation(anim);
 
         Glide.with(this)
-                .load(R.drawable.hey)
+               .load(R.drawable.mesa)
                 .centerCrop()
                 .transition(DrawableTransitionOptions.withCrossFade(500))
                 .placeholder(new ColorDrawable(this.getResources().getColor(R.color.cardview_light_background)))
@@ -39,13 +39,25 @@ public class MainActivity extends AppCompatActivity {
         btnmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,activity_menus.class);
+                Intent intent=new Intent(MainActivity.this, activitymenus.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                 startActivity(intent);
 
             }
         });
-
         TextView mycontext=(TextView) findViewById(R.id.textView);
         registerForContextMenu(mycontext);
+    }
+
+    public void openMenus(View view){
+        Intent intent=new Intent(MainActivity.this, activitymenus.class);
+        startActivity(intent);
+    }
+
+    public void openMain2(View view){
+        Intent intent=new Intent(MainActivity.this,MainActivity.class);
+        startActivity(intent);
     }
 }
